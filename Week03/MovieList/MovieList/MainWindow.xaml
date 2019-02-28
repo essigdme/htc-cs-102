@@ -8,15 +8,15 @@
         Title="MainWindow" Height="400" Width="525">
     <StackPanel Margin="10,10,10,10">
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="52" Margin="10,0,0,0" TextWrapping="Wrap" Width="467"><Run Text="TextBlock"/><InlineUIContainer>
-                <TextBox x:Name="textBoxTitle" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="TextBox" Width="477"/>
+                <TextBox x:Name="textBoxTitle" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="name" Width="477"/>
             
             </InlineUIContainer></TextBlock>
-        <TextBlock x:Name="textBlockTitle" HorizontalAlignment="Left" Height="107" Margin="10,0,0,0" TextWrapping="Wrap" Width="467"><Run Text="TextBlock"/><InlineUIContainer>
-                <TextBox x:Name="Title" Height="26" TextWrapping="Wrap" Text="TextBox" Width="402"/>
+        <TextBlock x:Name="textBlockTitle" HorizontalAlignment="Left" Height="107" Margin="10,0,0,0" TextWrapping="Wrap" Width="467"><Run Text=""/><InlineUIContainer>
+                <TextBox x:Name="textBoxTitle1" Height="26" TextWrapping="Wrap" Text="year" Width="402"/>
             
             </InlineUIContainer></TextBlock>
-        <Button x:Name="button" Content="Add Movie" HorizontalAlignment="Left" Height="30" Margin="37,0,0,0" Width="429"/>
-        <Button x:Name="button1" Content="Show All Movies" Click ="button1_Click" HorizontalAlignment="Left" Height="35" Margin="37,0,0,0" Width="429"/>
+        <Button x:Name="button" Content="Add Movie" Click =" buttonAddMovie_Click" HorizontalAlignment="Left" Height="30" Margin="37,0,0,0" Width="429"/>
+        <Button x:Name="button1" Content="Show All Movies" Click ="buttonShowAll_Click" HorizontalAlignment="Left" Height="35" Margin="37,0,0,0" Width="429"/>
 
     </StackPanel>
 </Window>
