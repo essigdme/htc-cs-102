@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,26 @@ namespace PolymorphismIntro
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ObservableCollection<Animal> Animals;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            Animals = new ObservableCollection<Animal>();
+
+            Frog frog = new Frog(4, "Kermit", false, 10);
+            Duck duck = new Duck(10, "Donald", 20);
+            Duck duck1 = new Duck(5, "Daffy", 60);
+            Dog dog = new Dog("Rapper", 10, "Snoop",70);
+
+            Animals.Add(frog);
+            Animals.Add(dog);
+            Animals.Add(duck);
+            Animals.Add(duck1);
+
+            lvAnimals.ItemsSource = Animals;
+
         }
 
         private void Bark_Button_Click(object sender, RoutedEventArgs e)
@@ -45,7 +63,12 @@ namespace PolymorphismIntro
 
         private void SayName_Button_Click(object sender, RoutedEventArgs e)
         {
-            // Define a new List of dogs
+            foreach (Animal animal in Animals)
+            {
+                animal.SayName();
+            }
+
+            /*// Define a new List of dogs
             List<Dog> dogs = new List<Dog>();
             
             // Instantiate some dog objects
@@ -67,7 +90,17 @@ namespace PolymorphismIntro
             duck1.SayName();
 
             Frog frog1 = new Frog(4, "Kermit", false);
-            frog1.SayName();
+            frog1.SayName();*/
+        }
+
+        private void lvAnimals_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            Animal selectedAnimal = lvAnimals.SelectedItem as Animal;
+            if(selectedAnimal != null)
+            {
+                selectedAnimal.Speak();
+            }
         }
     }
 }
