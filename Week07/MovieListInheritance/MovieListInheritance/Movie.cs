@@ -4,6 +4,9 @@ namespace MovieList
 {
     public class Movie
     {
+        private string text;
+        private int v;
+
         public string Title
         {
             get;
@@ -16,7 +19,7 @@ namespace MovieList
             set;
         }
 
-        public void ShowDetails()
+       public virtual void ShowDetails()
         {
             string infoString = "Title: " + this.Title;
             infoString += "\nRelease Year: " + this.ReleaseYear;
@@ -25,10 +28,17 @@ namespace MovieList
 
         public Movie() { }
 
-        public Movie(string myTitle, int myReleaseYear)
+        public Movie(string myTitle, int myReleaseYear, string myAnimationType, string myAnimationStudio)
         {
             this.Title = myTitle;
             this.ReleaseYear = myReleaseYear;
+            
+        }
+
+        public Movie(string text, int v)
+        {
+            this.text = text;
+            this.v = v;
         }
     }
 }

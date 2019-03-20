@@ -19,14 +19,37 @@
         <TextBox Name="titleInput" Margin="0,0,0,15"></TextBox>
         <TextBlock>Release Year</TextBlock>
         <TextBox Name="releaseYearInput" Margin="0,0,0,15"></TextBox>
-        <Button Click="AddButton_Click" HorizontalAlignment="Center" Margin="0,0,0,10">Add</Button>
-        
+
         <!-- Border surrounding Animated Movie options -->
         <Border BorderThickness="1" BorderBrush="Gray" Padding="8">
             <StackPanel>
                 <!-- Put Animated Movie options in here -->
-                
+
             </StackPanel>
         </Border>
+        <Button Click="AddButton_Click" HorizontalAlignment="Center" Margin="236,0,235,10" Content="Add" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-1.415"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox x:Name="AnimationStudioInput" HorizontalAlignment="Left" Height="22" Margin="21,0,0,0" TextWrapping="Wrap" Text="" Width="457" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.216"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBlock x:Name="AnimationStudio" HorizontalAlignment="Left" Height="21" Margin="28,0,0,0" TextWrapping="Wrap" Text="AnimationStudio" Width="83"/>
+        <TextBox x:Name="AnimationTypeInput" HorizontalAlignment="Left" Height="29" Margin="46,0,0,0" TextWrapping="Wrap" Text="" Width="441"/>
+        <TextBlock x:Name="AnimationType" HorizontalAlignment="Left" Height="30" Margin="57,0,0,0" TextWrapping="Wrap" Text="AnimationType" Width="96"/>
+        <Button x:Name="AddAnimatedMovie" Click ="AddAniamtedMovieButton_Click" Content="Add Animated Movie" HorizontalAlignment="Left" Height="54" Margin="134,0,0,0" Width="215"/>
     </StackPanel>
 </Window>
